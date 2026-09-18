@@ -1,0 +1,21 @@
+chapter,ja,en,wrong_en_1,wrong_en_2,wrong_en_3,wrong_ja_1,wrong_ja_2,wrong_ja_3
+1,誤差逆伝播法,back propagation,gradient descent,forward propagation,chain rule,勾配降下法,順伝播,連鎖律
+1,過剰適合,overfitting,underfitting,regularization,generalization,過小適合,正則化,汎化
+1,畳み込みニューラルネットワーク,convolutional neural network,generative adversarial network,graph neural network,multilayer perceptron,敵対的生成ネットワーク,グラフニューラルネットワーク,多層パーセプトロン
+1,ディープビリーフネットワーク,deep belief network,Hopfield network,self-organizing map,generative adversarial network,ホップフィールドネットワーク,自己組織化マップ,敵対的生成ネットワーク
+1,事前学習,pretraining,curriculum learning,warm-up,data augmentation,カリキュラム学習,ウォームアップ,データ拡張
+1,制約ボルツマンマシン,restricted Boltzmann machine,Hopfield network,Markov chain,Gibbs sampling,ホップフィールドネットワーク,マルコフ連鎖,ギブスサンプリング
+1,自己符号化器,autoencoder,variational autoencoder,principal component analysis,generative adversarial network,変分自己符号化器,主成分分析,敵対的生成ネットワーク
+1,深い,deep,shallow,wide,sparse,浅い,広い,疎な
+1,ディープニューラルネットワーク,deep neural network,multilayer perceptron,feedforward neural network,generative adversarial network,多層パーセプトロン,順伝播型ニューラルネットワーク,敵対的生成ネットワーク
+1,リカレントニューラルネットワーク,recurrent neural network,long short-term memory,gated recurrent unit,sequence-to-sequence model,長短期記憶,ゲート付き回帰型ユニット,系列変換モデル
+1,注意機構,attention mechanism,self-attention,positional encoding,multi-head attention,自己注意,位置エンコーディング,マルチヘッドアテンション
+1,トランスフォーマー,transformer,encoder-decoder model,sequence-to-sequence model,long short-term memory,エンコーダデコーダモデル,系列変換モデル,長短期記憶
+1,帰納バイアス,inductive bias,prior knowledge,no free lunch theorem,curse of dimensionality,事前知識,ノーフリーランチ定理,次元の呪い
+1,入口から出口まで,end-to-end,step-by-step,black-box,human-in-the-loop,段階的,ブラックボックス,人間参加型
+1,微分可能,differentiable,continuous,convex,non-linear,連続,凸,非線形
+1,認知的自動化,cognitive automation,robotic process automation,cognitive computing,expert system,ロボティックプロセスオートメーション,認知コンピューティング,エキスパートシステム
+1,自己教師あり学習,self-supervised learning,supervised learning,unsupervised learning,semi-supervised learning,教師あり学習,教師なし学習,半教師あり学習
+1,言語モデル,language model,word embedding,tokenizer,n-gram model,単語埋め込み,トークナイザ,エヌグラムモデル
+1,スケーリング則,scaling law,power law,compute budget,emergent ability,べき乗則,計算予算,創発的能力
+1,残差接続,residual connection,layer normalization,batch normalization,gradient clipping,層正規化,バッチ正規化,勾配クリッピング
