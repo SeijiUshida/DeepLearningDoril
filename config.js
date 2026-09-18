@@ -28,8 +28,8 @@
  */
 const AUTO_DISCOVER_SHEETS = {
   enabled: true,
-  owner: "your-github-username",
-  repo: "your-repo-name",
+  owner: "seijiushida",
+  repo: "DeepLearningDoril",
   branch: "main",
   dir: "data",
 };
