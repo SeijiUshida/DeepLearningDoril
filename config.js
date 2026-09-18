@@ -13,10 +13,35 @@
  * label は章選択画面には使いません（実際の章番号は各CSVの chapter 列から自動集計されます）。
  * ここでの label は読み込みエラー時にどのシートか分かりやすくするための表示名です。
  */
+/*
+ * ===== 自動読み込み（推奨） =====
+ * data/ フォルダに「同じ形式のCSV」を追加してGitHubにpushするだけで、
+ * アプリが起動時にフォルダの中身を毎回問い合わせて自動的に取り込みます。
+ * つまり、他の人が新しい章のCSVを作って push すれば、
+ * config.js を一切編集しなくても単語帳が増えます。
+ *
+ * 使い方：自分のGitHubユーザー名とリポジトリ名を入れるだけ（最初の1回のみ）。
+ *   owner  : リポジトリの所有者（ユーザー名 or Organization名）
+ *   repo   : リポジトリ名
+ *   branch : 公開に使っているブランチ（通常 "main"）
+ *   dir    : CSVを置いているフォルダ（このテンプレートでは "data"）
+ */
+const AUTO_DISCOVER_SHEETS = {
+  enabled: true,
+  owner: "your-github-username",
+  repo: "your-repo-name",
+  branch: "main",
+  dir: "data",
+};
+
+/*
+ * ===== 手動登録（任意） =====
+ * リポジトリ内のCSVではなく、Googleスプレッドシートを「ウェブに公開」したURLなど、
+ * data/ フォルダの外にある単語帳を追加したい場合はここに書きます。
+ * AUTO_DISCOVER_SHEETS と併用でき、両方が読み込まれます（不要なら空配列でOK）。
+ */
 const SHEET_CONFIG = [
-  { label: "単語帳シート1", url: "data/chapter1.csv" },
-  { label: "単語帳シート2", url: "data/chapter2.csv" },
-  { label: "単語帳シート3", url: "data/chapter3.csv" },
+  // { label: "外部スプレッドシート", url: "https://docs.google.com/spreadsheets/d/e/xxxxx/pub?output=csv" },
 ];
 
 /*

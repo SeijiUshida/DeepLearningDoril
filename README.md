@@ -5,7 +5,7 @@ HTML/CSS/JSのみで動く静的サイトなので、GitHub Pagesにそのまま
 
 ## 機能
 
-- **n個のスプレッドシート（CSV）を連結**して1つの単語帳として扱う
+- **n個のスプレッドシート（CSV）を連結**して1つの単語帳として扱う。`data/`フォルダにCSVを追加してpushするだけで**自動的に反映**（GitHub API経由でフォルダの中身を都度取得）
 - 章（chapter）ごとの**出題範囲選択**（チェックボックスで複数選択）
 - 出題方向の切り替え（日→英／英→日／両方）
 - 正解・不正解のあと、答え合わせを見せるための**ディレイ**を挟んで次の問題へ（`config.js`で秒数変更可）
@@ -44,27 +44,41 @@ CSVの1行目（ヘッダー）は次の列名にしてください（順番は�
 - `wrong_en_*` / `wrong_ja_*` が3つ揃っていない行は、自動的に他の単語からランダムに補って4択にします（誤答は用意しておくのが確実です）。
 - サンプル: `data/chapter1.csv` を参照してください。
 
-## 自分のスプレッドシートを使う（n個登録する）
+## 自分のスプレッドシート（CSV）を使う
 
-`config.js` の `SHEET_CONFIG` を編集します。
+### 最初の設定（1回だけ）
+
+`config.js` の `AUTO_DISCOVER_SHEETS` に、**自分のGitHubユーザー名とリポジトリ名**を書きます。
+
+```js
+const AUTO_DISCOVER_SHEETS = {
+  enabled: true,
+  owner: "あなたのGitHubユーザー名",
+  repo: "このリポジトリの名前",
+  branch: "main",
+  dir: "data",
+};
+```
+
+これだけで設定は完了です。
+
+### 2人目以降・章を増やすとき
+
+`data/` フォルダに、同じ列名のCSVを追加してGitHubにpushするだけです。**`config.js` を編集する必要はありません。**
+
+アプリを開くたびに、GitHub上の `data/` フォルダの中身をそのつど問い合わせて、`.csv` で終わるファイルを自動的にすべて単語帳として読み込みます。ファイル名は自由です（`chapter4.csv` でも `week5.csv` でも構いません）。中身のCSVフォーマットは下記の「スプレッドシートのフォーマット」を参照してください。
+
+※ GitHub APIには未ログイン状態で1時間あたり60回までという利用制限があります。個人・少人数での利用であれば通常問題になりません。
+
+### （任意）リポジトリの外にあるスプレッドシートを使う
+
+Googleスプレッドシートを「ウェブに公開」したCSVなど、このリポジトリの `data/` フォルダの外にある単語帳を追加したい場合は、`config.js` の `SHEET_CONFIG` に直接書きます（`AUTO_DISCOVER_SHEETS` と併用できます）。
 
 ```js
 const SHEET_CONFIG = [
-  { label: "単語帳1", url: "data/chapter1.csv" },
-  { label: "単語帳2", url: "data/chapter2.csv" },
-  { label: "単語帳3", url: "https://docs.google.com/spreadsheets/d/e/xxxxx/pub?output=csv" },
-  // 必要なだけ追加できます（n個）
+  { label: "外部スプレッドシート", url: "https://docs.google.com/spreadsheets/d/e/xxxxx/pub?output=csv" },
 ];
 ```
-
-### Googleスプレッドシートを直接読み込む場合
-
-1. スプレッドシートを開く
-2. 「ファイル」→「共有」→「ウェブに公開」
-3. 公開するシート（タブ）を選び、形式を **「カンマ区切りの値（.csv）」** にして公開
-4. 発行されたURLを `config.js` の `url` に貼り付ける
-
-※ シートを編集すればアプリ側は再読み込みするだけで最新内容になります。
 
 ## GitHub Pagesで公開する手順
 

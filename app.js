@@ -130,9 +130,45 @@ function rowsToWords(rows) {
   return words;
 }
 
+async function discoverGithubSheets() {
+  const cfg = AUTO_DISCOVER_SHEETS;
+  if (!cfg || !cfg.enabled) return [];
+  if (!cfg.owner || cfg.owner === "your-github-username" || !cfg.repo || cfg.repo === "your-repo-name") {
+    console.warn("AUTO_DISCOVER_SHEETS が未設定です（config.js の owner/repo を書き換えてください）");
+    return [];
+  }
+  const apiUrl = `https://api.github.com/repos/${cfg.owner}/${cfg.repo}/contents/${cfg.dir}?ref=${cfg.branch}`;
+  try {
+    const res = await fetch(apiUrl, { cache: "no-store" });
+    if (!res.ok) throw new Error("HTTP " + res.status);
+    const items = await res.json();
+    return items
+      .filter((item) => item.type === "file" && /\.csv$/i.test(item.name))
+      .map((item) => ({ label: item.name, url: item.download_url }));
+  } catch (e) {
+    console.warn("GitHubからのCSV自動検出に失敗しました:", e.message);
+    return [];
+  }
+}
+
 async function loadAllSheets() {
+  const autoSheets = await discoverGithubSheets();
+  const seen = new Set();
+  const sheets = [...autoSheets, ...SHEET_CONFIG].filter((s) => {
+    if (seen.has(s.url)) return false;
+    seen.add(s.url);
+    return true;
+  });
+
+  if (sheets.length === 0) {
+    throw new Error(
+      "単語帳のCSVが見つかりません。config.js の AUTO_DISCOVER_SHEETS に" +
+      "あなたのGitHubユーザー名とリポジトリ名を設定するか、SHEET_CONFIG に手動でURLを追加してください。"
+    );
+  }
+
   const all = [];
-  for (const sheet of SHEET_CONFIG) {
+  for (const sheet of sheets) {
     let text;
     try {
       const res = await fetch(sheet.url, { cache: "no-store" });
