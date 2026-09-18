@@ -1,0 +1,11 @@
+chapter,ja,en,wrong_en_1,wrong_en_2,wrong_en_3,wrong_ja_1,wrong_ja_2,wrong_ja_3
+2,食べる,eat,drink,sleep,run,飲む,寝る,走る
+2,飲む,drink,eat,read,write,食べる,読む,書く
+2,走る,run,walk,jump,swim,歩く,跳ぶ,泳ぐ
+2,歩く,walk,run,sit,stand,走る,座る,立つ
+2,読む,read,write,listen,speak,書く,聞く,話す
+2,書く,write,read,draw,erase,読む,描く,消す
+2,寝る,sleep,wake,dream,rest,起きる,夢見る,休む
+2,起きる,wake up,sleep,stand up,sit down,寝る,立つ,座る
+2,見る,watch,hear,touch,smell,聞く,触る,匂う
+2,聞く,listen,speak,see,feel,話す,見る,感じる
