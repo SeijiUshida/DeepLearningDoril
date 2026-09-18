@@ -132,27 +132,44 @@ function rowsToWords(rows) {
 
 async function discoverGithubSheets() {
   const cfg = AUTO_DISCOVER_SHEETS;
-  if (!cfg || !cfg.enabled) return [];
+  if (!cfg || !cfg.enabled) return { sheets: [], error: null };
   if (!cfg.owner || cfg.owner === "your-github-username" || !cfg.repo || cfg.repo === "your-repo-name") {
-    console.warn("AUTO_DISCOVER_SHEETS が未設定です（config.js の owner/repo を書き換えてください）");
-    return [];
+    return { sheets: [], error: null };
   }
   const apiUrl = `https://api.github.com/repos/${cfg.owner}/${cfg.repo}/contents/${cfg.dir}?ref=${cfg.branch}`;
   try {
     const res = await fetch(apiUrl, { cache: "no-store" });
-    if (!res.ok) throw new Error("HTTP " + res.status);
+
+    if (res.status === 403 || res.status === 429) {
+      const remaining = res.headers.get("x-ratelimit-remaining");
+      if (remaining === "0" || res.status === 429) {
+        return {
+          sheets: [],
+          error:
+            "GitHub APIの利用制限（レート制限）に達しました。同じネットワークにいる他の人の分と合算でカウントされるため、" +
+            "学校のWi-Fiなど共有環境では起こりやすい現象です。しばらく時間をおいてから再読み込みしてください。",
+        };
+      }
+    }
+    if (!res.ok) {
+      return {
+        sheets: [],
+        error: `GitHubのリポジトリ情報を取得できませんでした（HTTP ${res.status}）。config.js の owner / repo / branch / dir を確認してください。`,
+      };
+    }
+
     const items = await res.json();
-    return items
+    const sheets = items
       .filter((item) => item.type === "file" && /\.csv$/i.test(item.name))
       .map((item) => ({ label: item.name, url: item.download_url }));
+    return { sheets, error: null };
   } catch (e) {
-    console.warn("GitHubからのCSV自動検出に失敗しました:", e.message);
-    return [];
+    return { sheets: [], error: "GitHubへの接続に失敗しました：" + e.message };
   }
 }
 
 async function loadAllSheets() {
-  const autoSheets = await discoverGithubSheets();
+  const { sheets: autoSheets, error: autoError } = await discoverGithubSheets();
   const seen = new Set();
   const sheets = [...autoSheets, ...SHEET_CONFIG].filter((s) => {
     if (seen.has(s.url)) return false;
@@ -161,6 +178,7 @@ async function loadAllSheets() {
   });
 
   if (sheets.length === 0) {
+    if (autoError) throw new Error(autoError);
     throw new Error(
       "単語帳のCSVが見つかりません。config.js の AUTO_DISCOVER_SHEETS に" +
       "あなたのGitHubユーザー名とリポジトリ名を設定するか、SHEET_CONFIG に手動でURLを追加してください。"
@@ -299,7 +317,7 @@ el("btn-select-none").addEventListener("click", () => {
 
 el("btn-start").addEventListener("click", () => {
   const pool = state.words.filter((w) => state.selectedChapters.has(w.chapter));
-  const specs = pool.map((word) => ({ word, direction: pickDirection(word) }));
+  const specs = buildSpecsForPool(pool);
   startQuiz(shuffle(specs));
 });
 
@@ -321,18 +339,18 @@ function shuffle(arr) {
   return a;
 }
 
-function pickDirection(word) {
-  const okJa2En = word.wrongEn.length >= 3;
-  const okEn2Ja = word.wrongJa.length >= 3;
-
-  if (state.directionMode === "ja2en") return "ja2en";
-  if (state.directionMode === "en2ja") return "en2ja";
-
-  if (okJa2En && okEn2Ja) return Math.random() < 0.5 ? "ja2en" : "en2ja";
-  if (okJa2En) return "ja2en";
-  if (okEn2Ja) return "en2ja";
-  // どちらも不十分な場合は、誤答候補が多い方を採用（後で不足分を補う）
-  return word.wrongEn.length >= word.wrongJa.length ? "ja2en" : "en2ja";
+// 出題方向モードに応じて、出題対象の単語から問題スペックを組み立てる。
+// 「両方」は文字通り両方向：各単語につき「日→英」「英→日」の2問を出題する。
+function buildSpecsForPool(pool) {
+  if (state.directionMode === "both") {
+    const specs = [];
+    pool.forEach((word) => {
+      specs.push({ word, direction: "ja2en" });
+      specs.push({ word, direction: "en2ja" });
+    });
+    return specs;
+  }
+  return pool.map((word) => ({ word, direction: state.directionMode }));
 }
 
 function fillMissingWrong(list, correct, poolLang) {
@@ -446,7 +464,8 @@ function finishQuiz() {
   const uniqueWrong = [];
   const seen = new Set();
   state.wrongSpecs.forEach((spec) => {
-    const key = spec.word.ja + "|" + spec.word.en;
+    // 方向ごとに別問題として扱う（同じ単語でも日→英・英→日それぞれ間違えていたら両方残す）
+    const key = spec.word.ja + "|" + spec.word.en + "|" + spec.direction;
     if (!seen.has(key)) { seen.add(key); uniqueWrong.push(spec); }
   });
 
@@ -459,7 +478,8 @@ function finishQuiz() {
 }
 
 el("btn-retry-wrong").addEventListener("click", () => {
-  const specs = state.lastUniqueWrongSpecs.map((s) => ({ word: s.word, direction: pickDirection(s.word) }));
+  // 間違えた「まさにその方向」で出し直す（再抽選はしない）
+  const specs = state.lastUniqueWrongSpecs.map((s) => ({ word: s.word, direction: s.direction }));
   startQuiz(shuffle(specs));
 });
 
