@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="theme-color" content="#F7F7F4">
+<title>単語帳クイズ</title>
+<link rel="manifest" href="manifest.json">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script>
+  // ちらつき防止：描画前に保存済みテーマを適用
+  (function () {
+    var saved = localStorage.getItem("vocab-quiz-theme");
+    var theme = saved || (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+    document.documentElement.setAttribute("data-theme", theme);
+  })();
+</script>
+</head>
+<body>
+
+<div id="app">
+
+  <!-- ===== ホーム共通ヘッダー（テーマ切り替えのみ） ===== -->
+  <header id="home-header" class="top-bar">
+    <span></span>
+    <button id="theme-toggle-1" class="theme-toggle" aria-label="表示を切り替え"></button>
+  </header>
+
+  <!-- ===== 最新のお知らせバナー（ホーム画面のみ） ===== -->
+  <button id="announce-banner" class="announce-banner">
+    <span class="announce-banner-dot" id="announce-banner-dot"></span>
+    <span class="announce-banner-text" id="announce-banner-text"></span>
+    <span class="announce-banner-arrow">›</span>
+  </button>
+
+  <div id="home-content" class="home-content">
+
+    <!-- ===== ローディング画面 ===== -->
+    <section id="screen-loading" class="screen is-active screen-center">
+      <div class="spinner" aria-hidden="true"></div>
+      <p class="loading-text">読み込み中</p>
+    </section>
+
+    <!-- ===== エラー画面 ===== -->
+    <section id="screen-error" class="screen screen-center">
+      <div class="panel">
+        <h2>読み込みに失敗しました</h2>
+        <p id="error-detail" class="muted"></p>
+        <p class="muted small">config.js のスプレッドシートURL・共有設定・列名を確認してください。</p>
+        <button class="btn btn-primary" onclick="location.reload()">再読み込み</button>
+      </div>
+    </section>
+
+    <!-- ===== 章選択画面（クイズ） ===== -->
+    <section id="screen-select" class="screen">
+      <div class="select-actions">
+        <button id="btn-select-all" class="chip-btn">すべて選択</button>
+        <button id="btn-select-none" class="chip-btn">選択解除</button>
+      </div>
+
+      <div id="chapter-list" class="chapter-list"></div>
+
+      <footer class="bottom-bar">
+        <div class="direction-toggle" id="direction-toggle">
+          <button class="seg-btn" data-mode="both">両方</button>
+          <button class="seg-btn" data-mode="ja2en">日→英</button>
+          <button class="seg-btn" data-mode="en2ja">英→日</button>
+        </div>
+        <div id="selection-summary" class="selection-summary"></div>
+        <button id="btn-start" class="btn btn-primary btn-big" disabled>始める</button>
+      </footer>
+    </section>
+
+    <!-- ===== 単語帳（一覧）画面 ===== -->
+    <section id="screen-wordlist" class="screen">
+      <div id="wordlist-chips" class="chip-row"></div>
+      <div id="wordlist-items" class="wordlist"></div>
+    </section>
+
+    <!-- ===== お知らせ画面 ===== -->
+    <section id="screen-announcements" class="screen">
+      <h2 class="app-title" style="margin-bottom:12px;">お知らせ</h2>
+      <div id="announce-list" class="announce-list"></div>
+    </section>
+
+  </div>
+
+  <!-- ===== クイズ画面（回答中はタブバーなしの全画面） ===== -->
+  <section id="screen-quiz" class="screen">
+    <header class="quiz-header">
+      <button id="btn-quit" class="btn-icon" aria-label="中断">×</button>
+      <div class="progress-track">
+        <div id="progress-fill" class="progress-fill"></div>
+      </div>
+      <div id="progress-label" class="progress-label">1 / 10</div>
+    </header>
+
+    <div class="quiz-body">
+      <div class="quiz-meta">
+        <span id="quiz-chapter-tag">第1章</span>
+        <span id="quiz-direction">日本語→英語</span>
+      </div>
+      <div id="quiz-question" class="quiz-question">question</div>
+
+      <div id="quiz-choices" class="choices-grid"></div>
+    </div>
+  </section>
+
+  <!-- ===== 結果画面 ===== -->
+  <section id="screen-result" class="screen">
+    <div class="result-main">
+      <div id="result-score" class="result-score">10 / 10</div>
+      <div id="result-rate" class="result-rate muted">正答率 100%</div>
+    </div>
+
+    <div class="result-actions">
+      <button id="btn-retry-wrong" class="btn btn-primary btn-big">間違えた問題だけ</button>
+      <button id="btn-retry-same" class="btn btn-secondary btn-big">もう一度</button>
+      <button id="btn-back-select" class="btn btn-ghost btn-big">章の選択へ</button>
+    </div>
+  </section>
+
+  <!-- ===== 下部タブバー（ホーム画面でのみ表示） ===== -->
+  <nav id="bottom-nav" class="bottom-nav">
+    <button class="nav-btn" data-screen="select">
+      <span class="nav-icon">📝</span>
+      <span class="nav-label">クイズ</span>
+    </button>
+    <button class="nav-btn" data-screen="wordlist">
+      <span class="nav-icon">📖</span>
+      <span class="nav-label">単語帳</span>
+    </button>
+    <button class="nav-btn" data-screen="announcements">
+      <span class="nav-icon-wrap"><span class="nav-icon">🔔</span><span id="nav-announce-dot" class="dot"></span></span>
+      <span class="nav-label">お知らせ</span>
+    </button>
+  </nav>
+
+</div>
+
+<script src="config.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
