@@ -1,0 +1,38 @@
+chapter,ja,en,wrong_en_1,wrong_en_2,wrong_en_3,wrong_ja_1,wrong_ja_2,wrong_ja_3
+2,重み,weight,bias,parameter,coefficient,バイアス,パラメータ,係数
+2,バイアス,bias,intercept,threshold,weight,重み,閾値,切片
+2,活性化関数,activation function,transfer function,kernel function,loss function,伝達関数,カーネル関数,損失関数
+2,ReLU,rectified linear unit,leaky rectified linear unit,parametric linear unit,softplus,Leaky ReLU,PReLU,ソフトプラス
+2,シグモイド関数,sigmoid function,hyperbolic tangent function,softmax function,step function,双曲線正接関数,ソフトマックス関数,ステップ関数
+2,ロジスティクスシグモイド関数,logistic sigmoid function,hyperbolic tangent function,logit function,probit function,双曲線正接関数,ロジット関数,プロビット関数
+2,双曲線正接関数,hyperbolic tangent function,sigmoid function,hard tanh,softsign,シグモイド関数,ハードタンジェント,ソフトサイン関数
+2,マックスアウト,maxout,max pooling,average pooling,softmax function,マックスプーリング,平均プーリング,ソフトマックス関数
+2,ELU,exponential linear unit,scaled exponential linear unit,leaky rectified linear unit,softplus,SELU,Leaky ReLU,ソフトプラス
+2,GELU,Gaussian error linear unit,sigmoid linear unit,swish,softplus,SiLU,Swish,ソフトプラス
+2,入力層,input layer,visible layer,embedding layer,feature layer,可視層,埋め込み層,特徴層
+2,中間層,internal layer,bottleneck layer,embedding layer,pooling layer,ボトルネック層,埋め込み層,プーリング層
+2,隠れ層,hidden layer,visible layer,latent layer,embedding layer,可視層,潜在層,埋め込み層
+2,出力層,output layer,readout layer,softmax layer,loss layer,読み出し層,ソフトマックス層,損失層
+2,順伝播型ネットワーク/順伝播型ニューラルネットワーク,feedforward neural network,recurrent neural network,convolutional neural network,feedback neural network,再帰型ニューラルネットワーク,畳み込みニューラルネットワーク,フィードバック型ニューラルネットワーク
+2,訓練サンプル,training sample,validation sample,test sample,mini-batch,検証サンプル,テストサンプル,ミニバッチ
+2,訓練データ,training data,validation data,test data,mini-batch,検証データ,テストデータ,ミニバッチ
+2,教師あり学習,supervised learning,unsupervised learning,semi-supervised learning,self-supervised learning,教師なし学習,半教師あり学習,自己教師あり学習
+2,損失関数,loss function,activation function,score function,regularization term,活性化関数,スコア関数,正則化項
+2,経験損失最小化,empirical risk minimization,maximum likelihood estimation,maximum a posteriori estimation,structural risk minimization,最尤推定,最大事後確率推定,構造的リスク最小化
+2,回帰,regression,classification,ordinal regression,logistic regression,分類,順序回帰,ロジスティック回帰
+2,最尤推定,maximum likelihood estimation,maximum a posteriori estimation,least squares method,empirical risk minimization,最大事後確率推定,最小二乗法,経験損失最小化
+2,尤度,likelihood,probability density,posterior probability,prior probability,確率密度,事後確率,事前確率
+2,多クラス分類,multi-class classification,multi-label classification,binary classification,ordinal regression,マルチラベル分類,二値分類,順序回帰
+2,ソフトマックス関数,softmax function,sigmoid function,argmax function,log-softmax function,シグモイド関数,argmax関数,対数ソフトマックス関数
+2,スコア,score,logit,likelihood,loss,ロジット,尤度,損失
+2,交差エントロピー,cross entropy,mean squared error,KL divergence,hinge loss,平均二乗誤差,カルバック・ライブラー情報量,ヒンジ損失
+2,ロジット,logit,score,log-odds,probability,スコア,対数オッズ,確率
+2,マルチラベル分類,multi-label classification,multi-class classification,binary classification,multi-output regression,多クラス分類,二値分類,多出力回帰
+2,順序回帰,ordinal regression,multi-class classification,multi-label classification,ranking,多クラス分類,マルチラベル分類,ランキング学習
+2,陰的表現,implicit neural representation,explicit neural representation,voxel representation,distributed representation,明示的表現,ボクセル表現,分散表現
+2,陰に,implicit,explicitly,explicit,tacitly,明示的に,陽に,暗黙的に
+2,SIREN,sinusoidal representation network,neural radiance field,gaussian representation network,radial basis network,ニューラル放射場,ガウシアン表現ネットワーク,放射基底関数ネットワーク
+2,多層パーセプトロン,multi-layer perceptron,convolutional neural network,radial basis function network,perceptron,畳み込みニューラルネットワーク,放射基底関数ネットワーク,単純パーセプトロン
+2,距離関数,distance function,metric function,similarity function,signed distance function,計量関数,類似度関数,符号付き距離関数
+2,符号付き距離関数,signed distance function,distance function,level set function,occupancy function,距離関数,レベルセット関数,占有関数
+2,点群,point cloud,voxel grid,point set,depth map,ボクセル,点集合,深度マップ
