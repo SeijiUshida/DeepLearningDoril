@@ -4,7 +4,7 @@ chapter,ja,en,wrong_en_1,wrong_en_2,wrong_en_3,wrong_ja_1,wrong_ja_2,wrong_ja_3
 2,活性化関数,activation function,transfer function,kernel function,loss function,伝達関数,カーネル関数,損失関数
 2,ReLU,rectified linear unit,leaky rectified linear unit,parametric linear unit,softplus,Leaky ReLU,PReLU,ソフトプラス
 2,シグモイド関数,sigmoid function,hyperbolic tangent function,softmax function,step function,双曲線正接関数,ソフトマックス関数,ステップ関数
-2,ロジスティクシグモイド関数,logistic sigmoid function,hyperbolic tangent function,logit function,probit function,双曲線正接関数,ロジット関数,プロビット関数
+2,ロジスティックシグモイド関数,logistic sigmoid function,hyperbolic tangent function,logit function,probit function,双曲線正接関数,ロジット関数,プロビット関数
 2,双曲線正接関数,hyperbolic tangent function,sigmoid function,hard tanh,softsign,シグモイド関数,ハードタンジェント,ソフトサイン関数
 2,マックスアウト,maxout,max pooling,average pooling,softmax function,マックスプーリング,平均プーリング,ソフトマックス関数
 2,ELU,exponential linear unit,scaled exponential linear unit,leaky rectified linear unit,softplus,SELU,Leaky ReLU,ソフトプラス
