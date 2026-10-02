@@ -1,0 +1,35 @@
+chapter,ja,en,wrong_en_1,wrong_en_2,wrong_en_3,wrong_ja_1,wrong_ja_2,wrong_ja_3
+3,勾配降下法,gradient descent method,stochastic gradient descent,Newton's method,coordinate descent,確率的勾配降下法,ニュートン法,座標降下法
+3,勾配,gradient,derivative,Jacobian,Hessian,導関数,ヤコビ行列,ヘッセ行列
+3,学習率,learning rate,learning curve,decay rate,error rate,学習曲線,減衰率,誤差率
+3,バッチ学習,batch learning,online learning,minibatch learning,batch normalization,オンライン学習,ミニバッチ学習,バッチ正規化
+3,確率的勾配降下法,stochastic gradient descent,batch gradient descent,minibatch gradient descent,stochastic gradient ascent,バッチ勾配降下法,ミニバッチ勾配降下法,確率的勾配上昇法
+3,ミニバッチ,minibatch,batch size,microbatch,epoch,バッチサイズ,マイクロバッチ,エポック
+3,エポック,epoch,iteration,batch,step,イテレーション,バッチ,ステップ
+3,モメンタム,momentum,acceleration,damping,gradient,加速度,減衰,勾配
+3,ネステロフの勾配降下法,Nesterov's accelerated gradient,momentum method,Newton's method,conjugate gradient method,モメンタム法,ニュートン法,共役勾配法
+3,汎化,generalization,specialization,regularization,abstraction,特殊化,正則化,抽象化
+3,訓練誤差,training error,validation error,test error,training loss,検証誤差,テスト誤差,訓練損失
+3,汎化誤差,generalization error,training error,approximation error,estimation error,訓練誤差,近似誤差,推定誤差
+3,経験誤差,empirical error,Bayes error,approximation error,validation error,ベイズ誤差,近似誤差,検証誤差
+3,テスト誤差,test error,validation error,training error,generalization error,検証誤差,訓練誤差,汎化誤差
+3,学習曲線,learning curve,learning rate,ROC curve,validation curve,学習率,ROC曲線,検証曲線
+3,過剰適合,overfitting,underfitting,overestimation,overparameterization,過小適合,過大評価,過剰パラメータ化
+3,過学習,overlearning,underlearning,relearning,overgeneralization,学習不足,再学習,転移学習
+3,早期終了,early stopping,weight decay,dropout,learning rate decay,重みの減衰,ドロップアウト,学習率減衰
+3,バイアス・分散トレードオフ,bias-variance tradeoff,bias-variance decomposition,precision-recall tradeoff,exploration-exploitation tradeoff,バイアス・分散分解,適合率・再現率のトレードオフ,探索と活用のトレードオフ
+3,二重降下,double descent,double ascent,gradient descent,grokking,二重上昇,勾配降下,グロッキング
+3,正則化,regularization,normalization,standardization,generalization,正規化,標準化,汎化
+3,L2正規化,L2 regularization,L1 regularization,L0 regularization,elastic net,L1正規化,L0正規化,エラスティックネット
+3,重みの減衰,weight decay,weight sharing,weight initialization,weight normalization,重みの共有,重みの初期化,学習率の減衰
+3,ドロップアウト,dropout,dropconnect,early stopping,batch normalization,ドロップコネクト,早期終了,バッチ正規化
+3,RAdam,Rectified Adam,Regularized Adam,Rescaled Adam,Rectified AdaGrad,AdamW,AdaGrad,RMSprop
+3,SAM,sharpness aware minimization,sharpness aware maximization,stochastic adaptive momentum,sparse adaptive minimization,SWA,LAMB,ASAM
+3,LARS,layer-wise adaptive rate scaling,layer-wise adaptive moments,layer-wise relevance propagation,layer-wise adaptive rate scheduling,LAMB,LRP,LASSO
+3,正規化,normalization,standardization,regularization,whitening,標準化,正則化,白色化
+3,標準化,standardization,normalization,whitening,centering,正規化,白色化,中心化
+3,白色化,whitening,standardization,centering,orthogonalization,標準化,中心化,直交化
+3,バッチ正規化,batch normalization,layer normalization,batch learning,instance normalization,レイヤー正規化,バッチ学習,インスタンス正規化
+3,レイヤー正規化,layer normalization,batch normalization,group normalization,local response normalization,バッチ正規化,グループ正規化,局所応答正規化
+3,重みを正規化する方法,weight normalization,weight decay,batch normalization,spectral normalization,重みの減衰,バッチ正規化,スペクトル正規化
+3,カリキュラム学習,curriculum learning,transfer learning,active learning,continual learning,転移学習,能動学習,継続学習
