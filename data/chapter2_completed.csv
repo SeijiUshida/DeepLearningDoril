@@ -18,7 +18,7 @@ chapter,ja,en,wrong_en_1,wrong_en_2,wrong_en_3,wrong_ja_1,wrong_ja_2,wrong_ja_3
 2,訓練データ,training data,validation data,test data,mini-batch,検証データ,テストデータ,ミニバッチ
 2,教師あり学習,supervised learning,unsupervised learning,semi-supervised learning,self-supervised learning,教師なし学習,半教師あり学習,自己教師あり学習
 2,損失関数,loss function,activation function,score function,regularization term,活性化関数,スコア関数,正則化項
-2,経験損失最小化,empirical risk minimization,maximum likelihood estimation,maximum a posteriori estimation,structural risk minimization,最尤推定,最大事後確率推定,構造的リスク最小化
+2,経験損失の最小化,empirical risk minimization,maximum likelihood estimation,maximum a posteriori estimation,structural risk minimization,最尤推定,最大事後確率推定,構造的リスク最小化
 2,回帰,regression,classification,ordinal regression,logistic regression,分類,順序回帰,ロジスティック回帰
 2,最尤推定,maximum likelihood estimation,maximum a posteriori estimation,least squares method,empirical risk minimization,最大事後確率推定,最小二乗法,経験損失最小化
 2,尤度,likelihood,probability density,posterior probability,prior probability,確率密度,事後確率,事前確率
@@ -30,6 +30,7 @@ chapter,ja,en,wrong_en_1,wrong_en_2,wrong_en_3,wrong_ja_1,wrong_ja_2,wrong_ja_3
 2,マルチラベル分類,multi-label classification,multi-class classification,binary classification,multi-output regression,多クラス分類,二値分類,多出力回帰
 2,順序回帰,ordinal regression,multi-class classification,multi-label classification,ranking,多クラス分類,マルチラベル分類,ランキング学習
 2,陰的表現,implicit neural representation,explicit neural representation,voxel representation,distributed representation,明示的表現,ボクセル表現,分散表現
+2,PINN,physics-informed neural network,physics-guided neural network,physics-inspired neural network,neural ordinary differential equation,PGNN,NODE,DeepONet
 2,陰に,implicit,explicitly,explicit,tacitly,明示的に,陽に,暗黙的に
 2,SIREN,sinusoidal representation network,neural radiance field,gaussian representation network,radial basis network,ニューラル放射場,ガウシアン表現ネットワーク,放射基底関数ネットワーク
 2,多層パーセプトロン,multi-layer perceptron,convolutional neural network,radial basis function network,perceptron,畳み込みニューラルネットワーク,放射基底関数ネットワーク,単純パーセプトロン
