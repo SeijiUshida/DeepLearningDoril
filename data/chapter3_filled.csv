@@ -20,7 +20,7 @@ chapter,ja,en,wrong_en_1,wrong_en_2,wrong_en_3,wrong_ja_1,wrong_ja_2,wrong_ja_3
 3,バイアス・分散トレードオフ,bias-variance tradeoff,bias-variance decomposition,precision-recall tradeoff,exploration-exploitation tradeoff,バイアス・分散分解,適合率・再現率のトレードオフ,探索と活用のトレードオフ
 3,二重降下,double descent,double ascent,gradient descent,grokking,二重上昇,勾配降下,グロッキング
 3,正則化,regularization,normalization,standardization,generalization,正規化,標準化,汎化
-3,L2正規化,L2 regularization,L1 regularization,L0 regularization,elastic net,L1正規化,L0正規化,エラスティックネット
+3,L2正則化,L2 regularization,L1 regularization,L0 regularization,elastic net,L1正規化,L0正規化,エラスティックネット
 3,重みの減衰,weight decay,weight sharing,weight initialization,weight normalization,重みの共有,重みの初期化,学習率の減衰
 3,ドロップアウト,dropout,dropconnect,early stopping,batch normalization,ドロップコネクト,早期終了,バッチ正規化
 3,RAdam,Rectified Adam,Regularized Adam,Rescaled Adam,Rectified AdaGrad,AdamW,AdaGrad,RMSprop
