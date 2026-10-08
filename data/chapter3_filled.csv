@@ -7,7 +7,7 @@ chapter,ja,en,wrong_en_1,wrong_en_2,wrong_en_3,wrong_ja_1,wrong_ja_2,wrong_ja_3
 3,ミニバッチ,minibatch,batch size,microbatch,epoch,バッチサイズ,マイクロバッチ,エポック
 3,エポック,epoch,iteration,batch,step,イテレーション,バッチ,ステップ
 3,モメンタム,momentum,acceleration,damping,gradient,加速度,減衰,勾配
-3,ネステロフの勾配降下法,Nesterov's accelerated gradient,momentum method,Newton's method,conjugate gradient method,モメンタム法,ニュートン法,共役勾配法
+3,ネステロフの加速勾配法,Nesterov's accelerated gradient,momentum method,Newton's method,conjugate gradient method,モメンタム法,ニュートン法,共役勾配法
 3,汎化,generalization,specialization,regularization,abstraction,特殊化,正則化,抽象化
 3,訓練誤差,training error,validation error,test error,training loss,検証誤差,テスト誤差,訓練損失
 3,汎化誤差,generalization error,training error,approximation error,estimation error,訓練誤差,近似誤差,推定誤差
