@@ -1,0 +1,13 @@
+chapter,ja,en,wrong_en_1,wrong_en_2,wrong_en_3,wrong_ja_1,wrong_ja_2,wrong_ja_3
+4,誤差逆伝播法,back propagation,forward propagation,back propagation through time,gradient descent,順伝播法,時間展開型誤差逆伝播法,勾配降下法
+4,デルタ,delta,gamma,epsilon,sigma,ガンマ,イプシロン,シグマ
+4,自動微分,automatic differentiation,numerical differentiation,symbolic differentiation,automatic integration,数値微分,記号微分,自動積分
+4,有向非巡回グラフ,directed acyclic graph,undirected acyclic graph,directed cyclic graph,directed acyclic tree,無向非巡回グラフ,有向巡回グラフ,有向非巡回木
+4,原始的な,primitive,elementary,primary,prime,初歩的な,基本的な,原型の
+4,微分可能,differentiable,derivable,divisible,continuous,連続,積分可能,微分不可能
+4,幾何学的変換機構,spatial transformer,geometric transformer,spatial attention,affine transformer,空間的注意機構,自己注意機構,アフィン変換機構
+4,勾配消失問題,vanishing gradient problem,exploding gradient problem,vanishing activation problem,saturating gradient problem,勾配爆発問題,活性消失問題,勾配飽和問題
+4,残差接続,residual connection,residual block,recurrent connection,dense connection,残差ブロック,再帰接続,密結合接続
+4,スキップ接続,skip connection,dense connection,sparse connection,recurrent connection,全結合,疎結合,再帰接続
+4,残差ブロック,residual block,residual connection,bottleneck block,dense block,残差接続,ボトルネックブロック,デンスブロック
+4,確率的深度変動法,stochastic depth,stochastic width,stochastic pooling,stochastic gradient,確率的幅変動法,確率的プーリング,確率的勾配降下法
