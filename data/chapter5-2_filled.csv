@@ -1,0 +1,26 @@
+chapter,ja,en,wrong_en_1,wrong_en_2,wrong_en_3,wrong_ja_1,wrong_ja_2,wrong_ja_3
+5,ダウンサンプリング,downsampling,upsampling,undersampling,resampling,アップサンプリング,オーバーサンプリング,リサンプリング
+5,最大プーリング,max pooling,min pooling,average pooling,max unpooling,最小プーリング,平均プーリング,最大アンプーリング
+5,平均プーリング,average pooling,median pooling,global average pooling,max pooling,中央値プーリング,大域平均プーリング,最大プーリング
+5,Lp プーリング,Lp pooling,Lp normalization,Lp regularization,stochastic pooling,Lp 正規化,Lp 正則化,確率的プーリング
+5,大域平均プーリング,global average pooling,global max pooling,local average pooling,average pooling,大域最大プーリング,局所平均プーリング,平均プーリング
+5,局所コントラスト正規化,local contrast normalization,local response normalization,global contrast normalization,batch normalization,局所応答正規化,大域コントラスト正規化,バッチ正規化
+5,減算正規化,subtractive normalization,divisive normalization,additive normalization,subtractive scaling,除算正規化,加算正規化,減算プーリング
+5,除算正規化,divisive normalization,subtractive normalization,multiplicative normalization,divisive pooling,減算正規化,乗算正規化,除算プーリング
+5,同変,equivariant,equivariance,invariant,covariant,同変性,不変,共変
+5,同変性,equivariance,equivariant,invariance,covariance,同変,不変性,共分散
+5,不変性,invariance,invariant,equivariance,variance,不変,同変性,分散
+5,不変,invariant,invariance,equivariant,variant,不変性,同変,可変
+5,点単位の畳み込み,pointwise convolution,depthwise convolution,group-wise convolution,pointwise pooling,チャネル別畳み込み,グループ別畳み込み,点単位のプーリング
+5,グループ別畳み込み,group-wise convolution,channel-wise convolution,pointwise convolution,group normalization,チャネル別畳み込み,点単位の畳み込み,グループ正規化
+5,チャネル別畳み込み,channel-wise convolution,group-wise convolution,pointwise convolution,channel-wise pooling,グループ別畳み込み,点単位の畳み込み,チャネル別プーリング
+5,拡大,dilated,diluted,deformable,strided,縮小,ストライド,希釈
+5,幾何学的変換機構,spatial transformer,affine transformer,spatial attention,deformable convolution,空間的注意機構,アフィン変換,変形可能畳み込み
+5,最近傍法,nearest neighbor,k-nearest neighbor,nearest centroid,bilinear interpolation,k近傍法,最近重心法,双線形補間
+5,双線形補間,bilinear interpolation,bicubic interpolation,linear interpolation,nearest neighbor,バイキュービック補間,線形補間,最近傍法
+5,バイキュービック補間,bicubic interpolation,bilinear interpolation,cubic spline interpolation,trilinear interpolation,双線形補間,3次スプライン補間,三線形補間
+5,アップサンプリング,upsampling,downsampling,oversampling,interpolation,ダウンサンプリング,オーバーサンプリング,補間
+5,転置畳み込み,transposed convolution,dilated convolution,strided convolution,transposed pooling,拡大畳み込み,ストライド畳み込み,転置プーリング
+5,アップコンボリューション,up-convolution,down-convolution,up-pooling,dilated convolution,ダウンコンボリューション,アッププーリング,拡大畳み込み
+5,サブピクセル畳み込み,subpixel convolution,transposed convolution,subsampling convolution,subpixel pooling,転置畳み込み,サブサンプリング畳み込み,サブピクセルプーリング
+5,ピクセルシャッフル,pixel shuffle,pixel unshuffle,channel shuffle,pixel shift,ピクセルアンシャッフル,チャネルシャッフル,ピクセルシフト
