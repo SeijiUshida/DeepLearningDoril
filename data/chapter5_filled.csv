@@ -1,8 +1,8 @@
 chapter,ja,en,wrong_en_1,wrong_en_2,wrong_en_3,wrong_ja_1,wrong_ja_2,wrong_ja_3
 5,畳み込みニューラルネットワーク,convolutional neural network,recurrent neural network,deconvolutional neural network,residual neural network,再帰型ニューラルネットワーク,逆畳み込みニューラルネットワーク,深層信念ネットワーク
-5,畳み込み層,convolutional layer,pooling layer,full-connected layer,deconvolutional layer,プーリング層,全結合層,逆畳み込み層
-5,全結合,full-connected,full-convolutional,locally-connected,partially-connected,局所結合,部分結合,全畳み込み
-5,全結合層,full-connected layer,locally-connected layer,full-convolutional layer,hidden layer,局所結合層,隠れ層,全畳み込み層
+5,畳み込み層,convolution layer,pooling layer,full-connected layer,deconvolution layer,プーリング層,全結合層,逆畳み込み層
+5,全結合,fully-connected,fully-convolutional,locally-connected,partially-connected,局所結合,部分結合,全畳み込み
+5,全結合層,fully-connected layer,locally-connected layer,fully-convolutional layer,hidden layer,局所結合層,隠れ層,全畳み込み層
 5,視覚野,visual cortex,visual field,auditory cortex,cerebral cortex,視野,聴覚野,大脳皮質
 5,受容野,receptive field,receptive filter,respective field,visual field,視野,感覚野,受容体
 5,単純型細胞,simple cell,complex cell,simplex cell,single cell,複雑型細胞,単一型細胞,超複雑型細胞
