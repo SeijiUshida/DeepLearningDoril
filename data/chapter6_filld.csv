@@ -1,0 +1,21 @@
+chapter,ja,en,wrong_en_1,wrong_en_2,wrong_en_3,wrong_ja_1,wrong_ja_2,wrong_ja_3
+6,音声認識,speech recognition,speech synthesis,speaker recognition,speech enhancement,音声合成,話者認識,音声強調
+6,音素,phoneme,morpheme,grapheme,syllable,形態素,音節,書記素
+6,リカレントニューラルネットワーク,recurrent neural network,recursive neural network,convolutional neural network,feedforward neural network,リカーシブニューラルネットワーク,畳み込みニューラルネットワーク,フィードフォワードニューラルネットワーク
+6,時間遅れネットワーク,time delay network,temporal convolutional network,echo state network,dynamic time warping,時間畳み込みネットワーク,エコー状態ネットワーク,動的時間伸縮法
+6,エコー状態ネットワーク,echo state network,liquid state machine,time delay network,Hopfield network,リキッドステートマシン,時間遅れネットワーク,ホップフィールドネットワーク
+6,品詞,part-of-speech,morpheme,named entity,word sense,文節,固有表現,語義
+6,感情分析,sentiment analysis,semantic analysis,syntactic analysis,discourse analysis,意味解析,構文解析,係り受け解析
+6,双方向性RNN,bidirectional RNN,unidirectional RNN,multidimensional RNN,hierarchical RNN,単方向性RNN,多次元RNN,階層型RNN
+6,長・短期記憶,Long Short-Term Memory,Long-Term Short Memory,Short-Term Memory,Long-Term Memory,短期記憶,長期記憶,短・長期記憶
+6,のぞき穴,peephole,keyhole,pinhole,shortcut,鍵穴,抜け穴,ショートカット
+6,更新ゲートRNN,update gate RNN,reset gate RNN,forget gate RNN,input gate RNN,リセットゲートRNN,忘却ゲートRNN,入力ゲートRNN
+6,ゲート付きRNN,gated recurrent unit,long short-term memory,gated linear unit,update gate RNN,長・短期記憶,更新ゲートRNN,ゲート付き線形ユニット
+6,交差RNN,intersection RNN,identity RNN,independent RNN,interaction RNN,恒等RNN,独立RNN,相互作用RNN
+6,自己回帰モデル,auto-regressive model,moving average model,auto-encoder model,hidden Markov model,移動平均モデル,自己符号化器,隠れマルコフモデル
+6,言語モデル,language model,acoustic model,translation model,pronunciation model,音響モデル,翻訳モデル,発音モデル
+6,系列変換,sequence to sequence,sequence to vector,vector to sequence,sequence labeling,系列ラベリング,系列予測,系列整列
+6,因果的,causal,casual,non-causal,temporal,非因果的,偶然的,逐次的
+6,時間畳み込みネットワーク,temporal convolutional network,spatial convolutional network,recurrent convolutional network,time delay network,空間畳み込みネットワーク,リカレント畳み込みネットワーク,時間遅れネットワーク
+6,RTRL,realtime recurrent learning,back propagation through time,realtime reinforcement learning,recurrent reinforcement learning,BPTT,TBPTT,RRL
+6,BPTT,back propagation through time,realtime recurrent learning,back propagation through structure,forward propagation through time,RTRL,TBPTT,BPTS
