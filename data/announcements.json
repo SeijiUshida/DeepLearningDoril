@@ -46,5 +46,9 @@
     "date": "2026-10-23",
     "title": "第5章単語(p86~)の追加 & 第5章単語の修正",
     "body": "テスト範囲の追加に伴い、第5章に収録されている単語全てを追加しました。第5章に関して、次の3つの単語を修正しました。[convolutional layer → convolution layer]、[full-connected → fully-connected]、[full-connected layer→ fully connected layer]"
+  },
+  { "date": "2026-10-30",
+    "title":"第6章単語追加",
+    "body":"テスト範囲の追加に伴い、第6章に収録されている単語を追加しました。"
   }
 ]
