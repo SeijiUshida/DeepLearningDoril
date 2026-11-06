@@ -1,0 +1,22 @@
+chapter,ja,en,wrong_en_1,wrong_en_2,wrong_en_3,wrong_ja_1,wrong_ja_2,wrong_ja_3
+7,点群,point cloud,voxel grid,mesh,depth map,ボクセル格子,メッシュ,深度画像
+7,並び替え,permutation,combination,transposition,rotation,組み合わせ,転置,回転
+7,集合トランスフォーマー,set transformer,point transformer,graph transformer,deep sets,点群トランスフォーマー,グラフトランスフォーマー,ディープセット
+7,注意機構,attention mechanism,gating mechanism,memory network,skip connection,ゲート機構,記憶ネットワーク,スキップ接続
+7,注意,attention,memory,gate,saliency,記憶,ゲート,顕著性
+7,ソース,source,sink,query,context,シンク,クエリ,文脈
+7,ターゲット,target,source,query,context,ソース,クエリ,文脈
+7,ソース・ターゲット注意,source-to-target attention,target-to-source attention,source-to-source attention,target-to-target attention,ターゲット・ソース注意,ソース・ソース注意,ターゲット・ターゲット注意
+7,自己注意,self attention,cross attention,global attention,self supervision,相互注意,大域注意,自己教師あり学習
+7,乗算的注意,multiplicative attention,additive attention,multi-head attention,multiplicative gating,加算的注意,マルチヘッド注意,乗算的ゲート
+7,加算的注意,additive attention,multiplicative attention,multi-head attention,additive smoothing,乗算的注意,マルチヘッド注意,加算的平滑化
+7,内容に基づく注意,content-based attention,location-based attention,context-based attention,content-based filtering,位置に基づく注意,文脈に基づく注意,内容に基づくフィルタリング
+7,位置に基づく注意,location-based attention,content-based attention,distance-based attention,hard attention,内容に基づく注意,距離に基づく注意,ハード注意
+7,圧縮・励起,squeeze-excitation,squeeze-inhibition,expansion-excitation,squeeze-normalization,圧縮・抑制,拡張・励起,圧縮・正規化
+7,トランスフォーマー,transformer,encoder,decoder,recurrent network,エンコーダー,デコーダー,リカレントネットワーク
+7,トークン,token,type,embedding,vocabulary,タイプ,埋め込み,語彙
+7,マルチヘッド注意,multi-head attention,multi-layer attention,single-head attention,multi-task attention,多層注意,単一ヘッド注意,マルチタスク注意
+7,キー,key,query,value,weight,クエリ,値,重み
+7,値,value,key,query,output,キー,クエリ,出力
+7,位置符号化,positional encoding,one-hot encoding,word embedding,attention masking,ワンホット符号化,単語埋め込み,注意マスク
+7,ViT,vision transformer,video transformer,swin transformer,convolutional network,ViViT,DeiT,ResNet
